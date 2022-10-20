@@ -4,19 +4,19 @@
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
+            <li class="nav-item {{ Request::is('dashboard.html') ? 'active' : '' }}  ">
                 <a class="nav-link" href="./dashboard.html">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item {{ Request::is('categories') ? 'active' : '' }} ">
                 <a class="nav-link" href="{{ route('category-index') }}">
                     <i class="material-icons">person</i>
                     <p>Category</p>
                 </a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item {{ Request::is('create-category') ? 'active' : '' }} ">
                 <a class="nav-link" href="{{ route('category-create') }}">
                     <i class="material-icons">person</i>
                     <p>Add Category</p>
