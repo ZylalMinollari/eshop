@@ -9,7 +9,7 @@
     <div class="py-5">
         <div class="container">
             <div class="row">
-<h2>Featured Products</h2>
+                <h2>Featured Products</h2>
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($featured_products as $product)
                         <div class="item">
@@ -27,6 +27,29 @@
             </div>
         </div>
     </div>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <h2>Treading Categories</h2>
+                <div class="owl-carousel featured-carousel owl-theme">
+                    @foreach ($featured_categories as $tcategory)
+                        <div class="item">
+                            <div class="card">
+                                <img src="{{ asset('assets/uploads/category/' . $tcategory->image) }}" alt="Category Image ">
+                                <div class="card-body">
+                                    <h5>{{ $tcategory->name }}</h5>
+                                    <p>
+                                        {{ $tcategory->description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
@@ -35,7 +58,7 @@
             loop: true,
             margin: 10,
             nav: true,
-            dots:false,
+            dots: false,
             responsive: {
                 0: {
                     items: 1

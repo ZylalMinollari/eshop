@@ -1,10 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\AdminFrontendController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Frontend\FrontendController as FrontendFrontendController;
-use App\Models\Product;
+use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +22,8 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 
-Route::get('/',[FrontendFrontendController::class,'index'])->name('front.index');
+Route::get('/',[FrontendController::class,'index'])->name('front.index');
+Route::get('/category',[FrontendController::class,'category'])->name('category');
 
 Auth::routes();
 
@@ -31,7 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
-    Route::get('/dashboard',[FrontendController::class,'index'])->name('home.index');
+    Route::get('/dashboard',[AdminFrontendController::class,'index'])->name('home.index');
     Route::get('/categories',[CategoryController::class,'index'])->name('category-index');
     Route::get('/create-category',[CategoryController::class,'create'])->name('category-create');
     Route::post('/store-category',[CategoryController::class,'store'])->name('category-store');
