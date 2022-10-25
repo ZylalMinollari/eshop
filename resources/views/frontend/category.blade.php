@@ -14,6 +14,7 @@
                     <div class="row">
                         @foreach ($categories as $category)
                             <div class="col-md-4 mb-3">
+                                <a href="{{route('category-view',$category->slug)}}">
                                 <div class="card">
                                     <img src="{{ asset('assets/uploads/category/' . $category->image) }}"
                                         alt="Category Image ">
@@ -24,6 +25,8 @@
                                         </p>
                                     </div>
                                 </div>
+                                </a>
+                                
                             </div>
                         @endforeach
                     </div>
