@@ -35,6 +35,7 @@
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($featured_categories as $tcategory)
                         <div class="item">
+                            <a href="{{route('category-view',$tcategory->slug)}}">
                             <div class="card">
                                 <img src="{{ asset('assets/uploads/category/' . $tcategory->image) }}" alt="Category Image ">
                                 <div class="card-body">
@@ -44,6 +45,7 @@
                                     </p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
