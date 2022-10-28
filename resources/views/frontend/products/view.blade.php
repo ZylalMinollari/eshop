@@ -1,9 +1,14 @@
 @extends('layouts.front')
 
 @section('title', $products->name)
-@endsection
 
 @section('content')
+
+<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="container">
+<h6 class="mb-0"> Collection / Category Name / Product Name</h6>
+    </div>
+</div>
 <div class="container">
     <div class="card-shadow">
         <div class="card-body">
@@ -17,15 +22,15 @@
                         {{ $products->name }}
 
                     </h2>
-                    <br>
+                    <hr>
 
                     <label style="font-size: 16px" class="float-end badge bg-danger trending_tag">Trending</label>
                     <label class="me-3">Original Price : <s>Rs {{ $products->original_price }}</s></label>
                     <label class="fw-bold">Original Price : <s>Rs {{ $products->original_price }}</s></label>
                     <p class="mt-3">
-                        {!! $product->small_description !!}
+                        {!! $products->small_description !!}
                     </p>
-                    <br>
+                    <hr>
                     @if ($products->qty > 0)
                         <label class="badge bg-success">In Stock</label>
                     @else

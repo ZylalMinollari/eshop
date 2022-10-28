@@ -13,7 +13,7 @@
                 @foreach ($productOfCategory as $product)
                     <div class="col-md-3 mb-3">
                         <div class="card">
-                            <a href="{{route('product-view/' . $category->slug . '/' . $product->slug )}}">
+                            <a href="{{url('category/' . $category->slug . '/' . $product->slug )}}">
                                 <img src="{{ asset('assets/uploads/products/' . $product->image) }}" alt="Product Image ">
                                 <div class="card-body">
                                     <h5>{{ $product->name }}</h5>
